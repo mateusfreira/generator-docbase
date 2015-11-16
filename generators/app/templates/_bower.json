@@ -1,0 +1,21 @@
+{
+  "name": "doc_test",
+  "authors": [],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "docbase": "*",
+    "font-awesome": "~4.4.0"
+  }
+}
