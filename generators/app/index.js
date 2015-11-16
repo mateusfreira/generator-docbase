@@ -16,7 +16,7 @@ module.exports = yeoman.generators.Base.extend({
       type: 'confirm',
       name: 'useGenerator',
       message: 'Would you like to generate static html files?',
-      default: false
+      default: true
     }];
 
     this.prompt(prompts, function(props) {
