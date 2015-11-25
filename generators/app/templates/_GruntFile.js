@@ -26,10 +26,10 @@ module.exports = function(grunt) {
 				options: {
 					base: 'docs_html',
 					user: {
-						name: 'Travis',
-						email: 'mateusfreira@gmail.com'
+						name: '',
+						email: ''
 					},
-					repo: 'https://' + process.env.GH_TOKEN + '@github.com/appbaseio/Docs.git',
+					repo: '',
 					message: 'publish gh-pages (auto)',
 					silent: false,
 				},

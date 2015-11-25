@@ -2,7 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-
+var _ = require('lodash');
 module.exports = yeoman.generators.Base.extend({
   prompting: function() {
     var done = this.async();
@@ -12,17 +12,85 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to ' + chalk.red('GeneratorDocbase') + ' generator!'
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'useGenerator',
-      message: 'Would you like to generate static html files?',
-      default: true
-    }];
+    var hostTypeQuestions = {
+      generic: [{
+        type: 'input',
+        name: 'baseUrl',
+        message: 'What is your baseUrl',
+      }, {
+        type: 'input',
+        name: 'basePath',
+        message: 'What is your basePath',
+        default: 'docs',
+      }],
+      file: [{
+        type: 'input',
+        name: 'basePath',
+        message: 'What is your basePath',
+        default: 'docs',
+        required: false
+      }],
+      github: [{
+        type: 'input',
+        name: 'basePath',
+        message: 'What is the github User',
+        default: 'githubUser'
+      }, {
+        type: 'input',
+        name: 'basePath',
+        message: 'What is the documents repository',
+        default: 'githubRepo'
+      }, {
+        type: 'input',
+        name: 'basePath',
+        message: 'What is the path to the documents in the repository',
+        default: 'githubPath'
+      }, {
+        type: 'input',
+        name: 'basePath',
+        message: 'What is the branch to access the documents',
+        default: 'githubBranch'
+      }]
+    };
+    var geralPrompts = [{
+        type: 'list',
+        name: 'mode',
+        message: 'Choose a execution mode',
+        default: 'html',
+        choices: [{
+          name: 'HTML',
+          value: "HTML"
+        }, {
+          name: 'Single-page application',
+          value: 'Single-page application'
+        }]
+      }, //prompt user to answer questions
+      {
+        type: 'list',
+        name: "hostType",
+        default: 'file',
+        required: false,
+        message: "Choose how can we acessos your document",
+        choices: [{
+          name: 'Local file',
+          value: 'file'
+        }, {
+          name: 'External URl',
+          value: 'generic'
+        }, {
+          name: 'Github',
+          value: 'github'
+        }]
+      }
+    ];
 
-    this.prompt(prompts, function(props) {
-      this.props = props;
-      // To access props later use this.props.someOption;
-      done();
+    this.prompt(geralPrompts, function(props) {
+      this.log(props.hostType)
+      this.prompt(hostTypeQuestions[geralPrompts.hostType || 'file'], function(propsHostType) {
+        this.props = props; //_.assign(propsHostType, props);
+        // To access props later use this.props.someOption;
+        done();
+      }.bind(this));
     }.bind(this));
   },
 
@@ -34,11 +102,11 @@ module.exports = yeoman.generators.Base.extend({
       }, {
         'template': '_package.json',
         'name': 'package.json',
-        'useGenerator' : true
+        'useGenerator': true
       }, {
         'template': '_GruntFile.js',
         'name': 'GruntFile.js',
-        'useGenerator' : true
+        'useGenerator': true
       }, {
         'template': '_index.html',
         'name': 'index.html'
@@ -60,16 +128,17 @@ module.exports = yeoman.generators.Base.extend({
       }, {
         'template': 'docs/v2/sample/_sample1.md',
         'name': 'docs/v2/sample/sample1.md'
-      }      
-      ];
+      }];
       var opions = this.props;
       var self = this;
-      files.filter(function(file){
-        return !file.useGenerator || opions.useGenerator;
+      var templateData = opions;
+      files.filter(function(file) {
+        return !file.useGenerator || opions.mode === 'HTML';
       }).forEach(function(file) {
         self.fs.copy(
           self.templatePath(file.template),
-          self.destinationPath(file.name)
+          self.destinationPath(file.name),
+          templateData
         );
       });
     },

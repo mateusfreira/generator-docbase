@@ -8,8 +8,8 @@ var os = require('os');
 describe('generator docbase:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
-      .withOptions({ skipInstall: true })
-      .withPrompts({ useGenerator: true })
+      .withPrompts({ mode: 'HTML', hostType : 'file'})
+      .withPrompts({hostType : 'file'})
       .on('end', done);
   });
 
