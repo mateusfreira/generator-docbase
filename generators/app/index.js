@@ -56,13 +56,13 @@ module.exports = yeoman.generators.Base.extend({
         type: 'list',
         name: 'mode',
         message: 'Choose a execution mode',
-        default: 'html',
+        default: 'SPA',
         choices: [{
           name: 'HTML',
           value: "HTML"
         }, {
           name: 'Single-page application',
-          value: 'Single-page application'
+          value: 'SPA'
         }]
       }, //prompt user to answer questions
       {
@@ -85,9 +85,8 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     this.prompt(geralPrompts, function(props) {
-      this.log(props.hostType)
       this.prompt(hostTypeQuestions[geralPrompts.hostType || 'file'], function(propsHostType) {
-        this.props = props; //_.assign(propsHostType, props);
+        this.props = _.assign(propsHostType, props);
         // To access props later use this.props.someOption;
         done();
       }.bind(this));
@@ -101,12 +100,10 @@ module.exports = yeoman.generators.Base.extend({
         'name': 'bower.json'
       }, {
         'template': '_package.json',
-        'name': 'package.json',
-        'useGenerator': true
+        'name': 'package.json'
       }, {
         'template': '_GruntFile.js',
-        'name': 'GruntFile.js',
-        'useGenerator': true
+        'name': 'GruntFile.js'
       }, {
         'template': '_index.html',
         'name': 'index.html'
@@ -129,13 +126,18 @@ module.exports = yeoman.generators.Base.extend({
         'template': 'docs/v2/sample/_sample1.md',
         'name': 'docs/v2/sample/sample1.md'
       }];
-      var opions = this.props;
+      var defaultOptions = {
+        baseUrl: "",
+        githubUser: "",
+        githubPath: "",
+        githubRepo: "",
+        githubBranch: "",
+      };
+      var opions =  _.assign(this.props,defaultOptions);
       var self = this;
       var templateData = opions;
-      files.filter(function(file) {
-        return !file.useGenerator || opions.mode === 'HTML';
-      }).forEach(function(file) {
-        self.fs.copy(
+      files.forEach(function(file) {
+        self.fs.copyTpl(
           self.templatePath(file.template),
           self.destinationPath(file.name),
           templateData
