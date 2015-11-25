@@ -32,24 +32,21 @@ module.exports = yeoman.generators.Base.extend({
       }],
       github: [{
         type: 'input',
-        name: 'basePath',
-        message: 'What is the github User',
-        default: 'githubUser'
+        name: 'githubUser',
+        message: 'What is the github User'
       }, {
         type: 'input',
-        name: 'basePath',
-        message: 'What is the documents repository',
-        default: 'githubRepo'
+        name: 'githubRepo',
+        message: 'What is the documents repository'
       }, {
         type: 'input',
-        name: 'basePath',
-        message: 'What is the path to the documents in the repository',
-        default: 'githubPath'
+        name: 'githubPath',
+        message: 'What is the path to the documents in the repository'
       }, {
         type: 'input',
-        name: 'basePath',
+        name: 'githubBranch',
         message: 'What is the branch to access the documents',
-        default: 'githubBranch'
+        "default": "master"
       }]
     };
     var geralPrompts = [{
@@ -128,12 +125,13 @@ module.exports = yeoman.generators.Base.extend({
       }];
       var defaultOptions = {
         baseUrl: "",
+        basePath: "",
         githubUser: "",
         githubPath: "",
         githubRepo: "",
         githubBranch: "",
       };
-      var opions =  _.assign(this.props,defaultOptions);
+      var opions =  _.assign(defaultOptions, this.props);
       var self = this;
       var templateData = opions;
       files.forEach(function(file) {
