@@ -85,7 +85,7 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     this.prompt(geralPrompts, function(props) {
-      this.prompt(hostTypeQuestions[geralPrompts.hostType || 'file'], function(propsHostType) {
+      this.prompt(hostTypeQuestions[props.hostType || 'file'], function(propsHostType) {
         this.props = _.assign(propsHostType, props);
         // To access props later use this.props.someOption;
         done();
