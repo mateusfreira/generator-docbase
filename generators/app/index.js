@@ -93,41 +93,39 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function() {
       var files = [{
-        'template': '_bower.json',
-        'name': 'bower.json'
-      }, {
-        'template': '_package.json',
-        'name': 'package.json'
-      }, {
-        'template': '_GruntFile.js',
-        'name': 'GruntFile.js'
-      }, {
-        'template': '_index.html',
-        'name': 'index.html'
-      }, {
-        'template': '_map.json',
-        'name': 'map.json'
-      }, {
-        'template': 'html/_main.html',
-        'name': 'html/main.html'
-      }, {
-        'template': 'html/_navbar.html',
-        'name': 'html/navbar.html'
-      }, {
-        'template': 'js/_docbase.js',
-        'name': 'js/docbase.js'
-      }, {
-        'template': 'docs/v1/sample/_sample1.md',
-        'name': 'docs/v1/sample/sample1.md'
-      }, {
-        'template': 'docs/v2/sample/_sample1.md',
-        'name': 'docs/v2/sample/sample1.md'
-      },
-, {
-        'template': '_search-index.json',
-        'name': 'search-index.json'
-      }
-      _
+          'template': '_bower.json',
+          'name': 'bower.json'
+        }, {
+          'template': '_package.json',
+          'name': 'package.json'
+        }, {
+          'template': '_GruntFile.js',
+          'name': 'GruntFile.js'
+        }, {
+          'template': '_index.html',
+          'name': 'index.html'
+        }, {
+          'template': '_map.json',
+          'name': 'map.json'
+        }, {
+          'template': 'html/_main.html',
+          'name': 'html/main.html'
+        }, {
+          'template': 'html/_navbar.html',
+          'name': 'html/navbar.html'
+        }, {
+          'template': 'js/_docbase.js',
+          'name': 'js/docbase.js'
+        }, {
+          'template': 'docs/v1/sample/_sample1.md',
+          'name': 'docs/v1/sample/sample1.md'
+        }, {
+          'template': 'docs/v2/sample/_sample1.md',
+          'name': 'docs/v2/sample/sample1.md'
+        }, , {
+          'template': '_search-index.json',
+          'name': 'search-index.json'
+        }
       ];
       var defaultOptions = {
         baseUrl: "",
@@ -137,7 +135,7 @@ module.exports = yeoman.generators.Base.extend({
         githubRepo: "",
         githubBranch: "",
       };
-      var opions =  _.assign(defaultOptions, this.props);
+      var opions = _.assign(defaultOptions, this.props);
       var self = this;
       var templateData = opions;
       files.forEach(function(file) {
