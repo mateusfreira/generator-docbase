@@ -122,9 +122,13 @@ module.exports = yeoman.generators.Base.extend({
         }, {
           'template': 'docs/v2/sample/_sample1.md',
           'name': 'docs/v2/sample/sample1.md'
-        }, , {
+        },{
           'template': '_search-index.json',
           'name': 'search-index.json'
+        },
+        {
+          'template': 'style/_style.css',
+          'name': 'style/style.css'
         }
       ];
       var defaultOptions = {
