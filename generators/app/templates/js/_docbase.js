@@ -21,6 +21,3 @@
    flatdocHtml: '/bower_components/docbase/html/flatdoc.html',
    html5mode: false
  });
- $(function(){
-    $('.search').searchAppbase('./search-index.json');
- });
