@@ -129,7 +129,7 @@ module.exports = yeoman.generators.Base.extend({
         {
           'template': 'style/_style.css',
           'name': 'style/style.css'
-        }
+        },
         {
           'template': 'images/_docbase.png',
           'name': 'images/docbase.png'
