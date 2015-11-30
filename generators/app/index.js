@@ -127,8 +127,8 @@ module.exports = yeoman.generators.Base.extend({
           'name': 'search-index.json'
         },
         {
-          'template': 'style/_style.css',
-          'name': 'style/style.css'
+          'template': 'styles/_style.css',
+          'name': 'styles/style.css'
         },
         {
           'template': 'images/_docbase.png',
