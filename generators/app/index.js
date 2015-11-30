@@ -144,6 +144,8 @@ module.exports = yeoman.generators.Base.extend({
         githubBranch: "",
       };
       var opions = _.assign(defaultOptions, this.props);
+      opions.generateSearchIndex = true;
+      opions.generateHtml = opions.mode === 'HTML';
       var self = this;
       var templateData = opions;
       files.forEach(function(file) {

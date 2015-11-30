@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 				options: {
 					generatePath: "docs_html/",
 					generateSearchIndex : true,
+					generateHtml : '<%= generateHtml %>',
 					baseUrl: "/",
 					urlToAccess: "http://localhost:9001/",
 					assets: ['bower_components', 'styles', 'js', 'images', 'CNAME', 'map.json'],
