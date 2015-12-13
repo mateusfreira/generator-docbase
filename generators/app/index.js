@@ -105,8 +105,8 @@ module.exports = yeoman.generators.Base.extend({
           'template': '_index.html',
           'name': 'index.html'
         }, {
-          'template': '_map.json',
-          'name': 'map.json'
+          'template': '_docbase.json',
+          'name': 'docbase.json'
         }, {
           'template': 'html/_main.html',
           'name': 'html/main.html'
@@ -133,7 +133,7 @@ module.exports = yeoman.generators.Base.extend({
         {
           'template': 'images/_docbase.png',
           'name': 'images/docbase.png'
-        }        
+        }
       ];
       var defaultOptions = {
         baseUrl: "",
