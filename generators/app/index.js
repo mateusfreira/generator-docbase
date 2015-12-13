@@ -96,6 +96,9 @@ module.exports = yeoman.generators.Base.extend({
           'template': '_bower.json',
           'name': 'bower.json'
         }, {
+          'template': '_.gitignore',
+          "name" : '.gitignore',
+        },{
           'template': '_package.json',
           'name': 'package.json'
         }, {
