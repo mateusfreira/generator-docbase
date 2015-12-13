@@ -6,7 +6,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
+    <a id="docs-appbase-logo" class="navbar-brand" href="">
       <img src="/images/docbase.png" />
     </a>
   </div>
@@ -28,7 +28,7 @@
       </li>
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">      
+    <ul class="nav navbar-nav navbar-right">
        <li class="dropdown search-dropdown">
         <div class="form-group search-form"  data-ng-class="{'open-in':search.length > 0}" >
           <input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle"
@@ -58,7 +58,7 @@
         </ul>
       </li>
       <li class="github-star">
-        <iframe src="https://ghbtns.com/github-btn.html?user=appbaseio&repo=Docs&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=<%= githubUser %>&repo=<%= githubRepo %>&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->

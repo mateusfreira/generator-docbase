@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 				options: {
 					generatePath: "docs_html/",
 					generateSearchIndex : true,
-					generateHtml : '<%= generateHtml %>',
+					generateHtml : <%= generateHtml %>,
 					baseUrl: "/",
 					urlToAccess: "http://localhost:9001/",
 					assets: ['bower_components', 'styles', 'js', 'images', 'CNAME', 'map.json'],
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 					message: 'publish gh-pages (auto)',
 					silent: false,
 				},
-				src: ['**']				
+				src: ['**']
 			}
 		}
 	});
