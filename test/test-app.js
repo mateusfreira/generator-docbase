@@ -19,7 +19,7 @@ describe('generator docbase:app', function () {
     'package.json',
     'GruntFile.js',
     'index.html',
-    'docbase.json',
+    'docbase-config.js',
     'html/main.html',
     'html/navbar.html',
     'js/docbase.js',

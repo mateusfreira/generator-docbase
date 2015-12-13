@@ -108,8 +108,8 @@ module.exports = yeoman.generators.Base.extend({
           'template': '_index.html',
           'name': 'index.html'
         }, {
-          'template': '_docbase.json',
-          'name': 'docbase.json'
+          'template': '_docbase-config.js',
+          'name': 'docbase-config.js'
         }, {
           'template': 'html/_main.html',
           'name': 'html/main.html'
