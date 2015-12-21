@@ -1,1 +1,0 @@
- Docbase.run('docbase.json');

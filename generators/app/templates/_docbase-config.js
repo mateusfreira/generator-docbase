@@ -22,23 +22,30 @@ var docbaseConfig = {
   "html5mode": false,
   "versions" : {
     "v1": [{
-        "name": "sample",
-        "label": "Sample Label",
+      "name": "sample",
+      "label": "Sample Label",
+      "files": [{
+        "name": "sample1",
+        "label": "Sample 1 Doc"
+      },{
+        "name": "howtostart",
+        "label": "How to start",
         "files": [{
-          "name": "sample1",
-          "label": "Sample 1 Doc"
-          }]
-          }, {
-            "name": "other",
-            "label": "Other"
-            }],
-      "v2": [{
-            "name": "sample",
-            "label": "Sample Label",
-            "files": [{
-              "name": "sample1",
-              "label": "Sample 2 Doc"
-              }]
+          "name": "starting",
+          "label": "Starting with docbase"
+        }]
       }]
+    }, {
+      "name": "other",
+      "label": "Other"
+    }],
+    "v2": [{
+      "name": "sample",
+      "label": "Sample Label",
+      "files": [{
+        "name": "sample1",
+        "label": "Sample 2 Doc"
+      }]
+    }]
   }
 }

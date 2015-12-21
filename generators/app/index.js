@@ -116,12 +116,12 @@ module.exports = yeoman.generators.Base.extend({
         }, {
           'template': 'html/_navbar.html',
           'name': 'html/navbar.html'
-        }, {
-          'template': 'js/_docbase.js',
-          'name': 'js/docbase.js'
-        }, {
+        },  {
           'template': 'docs/v1/sample/_sample1.md',
           'name': 'docs/v1/sample/sample1.md'
+        },{
+          'template': 'docs/v1/howtostart/_starting.md',
+          'name': 'docs/v1/howtostart/starting.md'
         }, {
           'template': 'docs/v2/sample/_sample1.md',
           'name': 'docs/v2/sample/sample1.md'
