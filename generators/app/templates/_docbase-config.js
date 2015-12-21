@@ -27,17 +27,14 @@ var docbaseConfig = {
       "files": [{
         "name": "sample1",
         "label": "Sample 1 Doc"
-      },{
-        "name": "howtostart",
-        "label": "How to start",
-        "files": [{
-          "name": "starting",
-          "label": "Starting with docbase"
-        }]
-      }]
+      },]
     }, {
-      "name": "other",
-      "label": "Other"
+      "name": "howtostart",
+      "label": "How to start",
+      "files": [{
+        "name": "starting",
+        "label": "Starting with docbase"
+      }]
     }],
     "v2": [{
       "name": "sample",
