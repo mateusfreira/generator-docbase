@@ -22,6 +22,7 @@ describe('generator docbase:app', function () {
     'docbase-config.js',
     'html/main.html',
     'html/navbar.html',
+    'docs/v1/howtostart/starting.md',
     'docs/v1/sample/sample1.md',
     'docs/v2/sample/sample1.md',
     'search-index.json',
