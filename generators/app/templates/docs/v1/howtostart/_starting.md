@@ -1,17 +1,17 @@
-#Well come
+#Welcome
 
 ##About Docbase
 
-Docbase is an open source tool to publish you documentation project as a site.
+Docbase is an open source tool to publish your **markdown** documentation project as a site.
 
 * No server-side components
 * Deployable via GitHub Pages
 * Can fetch GitHub Readme files
-* Gorgeous default theme (and it’s responsive)
+* Gorgeous default theme based on flatdoc; it’s responsive, yes!
 
 
 ##Starting
-Now you have your project working take a loock
+Once you have the project working, this is how the directory structure would look like:
 
 ```bash
   |-images
